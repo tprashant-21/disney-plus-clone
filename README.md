@@ -1,6 +1,6 @@
 # disney-plus-clone
 
-##A REACT clone app with TailwindCSS and Vite
+A REACT clone app with TailwindCSS and Vite
 
 Feel free to take ideas from the code. 
 
