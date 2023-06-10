@@ -10,11 +10,11 @@ import {
     HiStar,
     }
     from "react-icons/hi2";
-import { HiPlus,HiDotsVertical } from "react-icons/hi";
+import { HiDotsVertical } from "react-icons/hi";
 
 function Navbar() {
 
-  const [headerItemCollapse, setHeaderItemCollapse] = useState(true);
+  const [headerItemCollapse, setHeaderItemCollapse] = useState(false);
 
   // collections of name and icon for Navbar
   const navItems = [
@@ -25,10 +25,6 @@ function Navbar() {
     {
       name: 'Search',
       icon: HiMagnifyingGlass
-    },
-    {
-      name: 'Watch List',
-      icon: HiPlus
     },
     {
       name: 'Originals',
@@ -45,11 +41,11 @@ function Navbar() {
 
   ]
   return (
-    <div className="flex items-center justify-between p-5">
+    <div className="flex items-center justify-between p-5 z-20">
 
       <div className="flex gap-8 items-center">
 
-        <img src = {logo} alt="Disney Plus logo" className="w-20 md:w-40 object-cover"></img>
+        <img src = {logo} alt="Disney Plus logo" className="w-20 md:w-28 lg:w-40 object-cover"></img>
 
         <div className='hidden md:flex gap-8'>
 
@@ -65,24 +61,24 @@ function Navbar() {
           <NavbarItem key={index} name={""} Icon={item.icon}/>
           ))}
 
-          <div className="md:hidden" onClick={()=>setHeaderItemCollapse(!headerItemCollapse)}>
+          <div className="md:hidden z-20"  onClick={()=>setHeaderItemCollapse(!headerItemCollapse)}>
+
             <NavbarItem name=""  Icon={HiDotsVertical}/>
-            {headerItemCollapse && <div className='absolute p-3 mt-3 bg-[#121212] px-5 py-3 border-[1px] border-gray-600'>
-                {navItems.map((item, index)=>(index>3 &&
+
+            {headerItemCollapse ? <div className='absolute p-3 mt-3 bg-[#121212] px-5 py-3 border-[1px] border-gray-600'>
+                {navItems.map((item, index)=>(index>2 &&
               <NavbarItem key={index} name={item.name} Icon={item.icon}/>
               ))}
-            </div>}
-
+            </div> : null}
 
           </div>
 
         </div>
-        
-
+      
       </div>
       
       {/* img credit to https://whatsondisneyplus.com/encanto-mirabel-profile-avatar-added-to-disney/ */}
-      <img src="https://i.pinimg.com/736x/3d/0a/d6/3d0ad6219d1d58ce1b9ce45e1b2b5754.jpg" className="rounded-full w-10"></img>
+      <img src="https://i.pinimg.com/736x/3d/0a/d6/3d0ad6219d1d58ce1b9ce45e1b2b5754.jpg" className="rounded-full w-8 md:w-10 lg:w-12"></img>
         
     </div>
   )
