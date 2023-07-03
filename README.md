@@ -4,6 +4,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+I did this project to sharpen my frontend skill.
+I am happy that the clone came quite close.
 
 ### Built With
 
@@ -44,7 +46,10 @@ npm run dev
 ## Contact
 
 Email: prashanttimalsina21@gmail.com
-  
+
+## Future Work
+Ensure browser compitability
+- I found sroll-x not working on firefox
 
 Feel free to take ideas from the code. 
 
